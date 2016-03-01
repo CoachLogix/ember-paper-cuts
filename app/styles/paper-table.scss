@@ -1,0 +1,100 @@
+$table-margin: 0px !default;
+$table-padding: 16px !default;
+$table-bg-color: white !default;
+$table-column-padding: 56px !default;
+$table-content-font-size: 13px !default;
+$table-content-font-color: rgba(0,0,0,.87);
+$table-column-header-font-size: 12px;
+$table-column-header-font-color: rgba(0,0,0,.54);
+$table-row-height: 48px !default;
+$table-last-row-margin: 8px !default;
+$table-perimeter-padding: 24px !default;
+$table-manipulation-height: 56px !default;
+
+md-data-table {
+  box-sizing: border-box;
+  display: table;
+  flex-direction: column;
+  margin: $table-margin;
+  width: 100%;
+
+  .initialsAvatar {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    background: rgba(0,0,0,.10);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    color: rgba(0,0,0,.3);
+  }
+
+  th {
+    text-align: right;
+    color: $table-column-header-font-color;
+    font-size: $table-column-header-font-size;
+    font-weight: bold;
+    line-height: $table-manipulation-height;
+  }
+
+  md-data-table-row {
+    display: table-row;
+    height: $table-row-height;
+    line-height: $table-row-height;
+  }
+  md-data-table-row:last-of-type {
+    margin-bottom: $table-last-row-margin;
+  }
+
+  md-data-table-column {
+    color: $table-content-font-color;
+    display: table-cell;
+    font-size: $table-content-font-size;
+    padding-left: $table-column-padding;
+    text-align: right;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  md-data-table-column.icon-column, th.icon-column {
+    text-align: center;
+  }
+  md-data-table-column.icon-column + md-data-table-column, th.icon-column + th {
+    text-align: left;
+    padding-left: 24px;
+  }
+
+  md-data-table-column:first-of-type, th:first-of-type {
+    padding-left: $table-perimeter-padding;
+    text-align: left;
+  }
+
+  md-data-table-column:last-of-type, th:last-of-type {
+    padding-right: $table-perimeter-padding;
+  }
+
+  md-data-table-header {
+    padding: $table-padding;
+    color: $table-content-font-color;
+    font-size: $table-content-font-size
+  }
+
+  md-table-row {
+    height: $table-row-height;
+  }
+}
+
+// Extra theming for development
+
+.paper-card {
+  background: white;
+}
+
+$table-border-radius: 2px !default;
+
+md-table.md-default-theme {
+  border-radius: $table-border-radius;
+
+  .md-table-image {
+    border-radius: $table-border-radius $table-border-radius 0 0;
+  }
+}
