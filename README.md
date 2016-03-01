@@ -1,25 +1,11 @@
 # Ember-paper-ext
 
-This README outlines the details of collaborating on this Ember addon.
+This project aims to make [Material Design](https://www.google.com/design/spec/material-design/introduction.html) components available that have not been officially implemented by [Ember Paper](https://github.com/miguelcobain/ember-paper). The goal is to build temporary components that closely follow Ember Paper and Angular Material conventions. This will ease a transition to officially supported components.
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+This project depends on [Ember Paper](https://github.com/miguelcobain/ember-paper) and [Ember-cli](https://github.com/ember-cli/ember-cli)
 
-## Running
+Add the following to your `package.json` files' `devDependencies`:
 
-* `ember server`
-* Visit your app at http://localhost:4200.
-
-## Running Tests
-
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+`"ember-paper-ext": "git://github.com/CoachLogix/ember-paper-ext.git"`
