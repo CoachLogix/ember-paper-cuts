@@ -6,7 +6,7 @@ This project aims to make [Material Design](https://www.google.com/design/spec/m
 
 This project depends on [Ember Paper](https://github.com/miguelcobain/ember-paper) and [Ember-cli](https://github.com/ember-cli/ember-cli)
 
-Add the following to your `package.json` files' `devDependencies`:
+Add the following to your `package.json` file's `devDependencies`:
 
 `"ember-paper-ext": "git://github.com/CoachLogix/ember-paper-ext.git"`
 
