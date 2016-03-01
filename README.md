@@ -9,3 +9,30 @@ This project depends on [Ember Paper](https://github.com/miguelcobain/ember-pape
 Add the following to your `package.json` files' `devDependencies`:
 
 `"ember-paper-ext": "git://github.com/CoachLogix/ember-paper-ext.git"`
+
+## Component Examples
+
+### Data tables
+
+```{{#paper-table}}
+  <thead>
+    <tr>
+      <th class="icon-column"></th>
+      <th>>Name</th>
+      <th>Age</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each models as |item|}}
+      {{#paper-row}}
+        {{#paper-column icon="true"}}
+          {{some-avatar src=item.image}}
+        {{/paper-column}}
+        {{#paper-column}}{{item.name}}{{/paper-column}}
+        {{#paper-column}}{{item.age}}{{/paper-column}}
+        {{#paper-column}}{{item.location}}{{/paper-column}}
+      {{/paper-row}}
+    {{/each}}
+  </tbody>
+{{/paper-table}}```
