@@ -14,7 +14,8 @@ Add the following to your `package.json` files' `devDependencies`:
 
 ### Data tables
 
-```{{#paper-table}}
+```hbs
+{{#paper-table}}
   <thead>
     <tr>
       <th class="icon-column"></th>
@@ -35,4 +36,5 @@ Add the following to your `package.json` files' `devDependencies`:
       {{/paper-row}}
     {{/each}}
   </tbody>
-{{/paper-table}}```
+{{/paper-table}}
+```
