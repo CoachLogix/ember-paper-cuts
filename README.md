@@ -10,7 +10,7 @@ This project depends on [Ember Paper](https://github.com/miguelcobain/ember-pape
 
 Add the following to your `package.json` file's `devDependencies`:
 
-`"ember-paper-ext": "git://github.com/CoachLogix/ember-paper-ext.git"`
+`"ember-paper-cuts": "git://github.com/CoachLogix/ember-paper-cuts.git"`
 
 ## Component Examples
 
