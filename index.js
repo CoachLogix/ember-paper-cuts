@@ -2,7 +2,7 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-paper-ext',
+  name: 'ember-paper-cuts',
   isDevelopingAddon: function() {
     return true;
   },
