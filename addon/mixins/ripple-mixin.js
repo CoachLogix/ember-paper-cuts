@@ -1,8 +1,10 @@
 import Ember from 'ember';
 /* global Hammer */
 /* global propagating */
+const { Mixin, run, $ } = Ember;
 
-export default Ember.Mixin.create({
+
+export default Mixin.create({
   mousedown: true,
   hover: true,
   focus: true,
@@ -32,7 +34,7 @@ export default Ember.Mixin.create({
       this.hammertime = propagating(new Hammer(this.node));
       this.color = this.parseColor(this.element.attr('md-ink-ripple')) || this.parseColor(window.getComputedStyle(this.colorElement[0]).color || 'rgb(0, 0, 0)');
       if (this.get('mousedown')) {
-        this.hammertime.on('hammer.input', Ember.run.bind(this, this.onInput));
+        this.hammertime.on('hammer.input', run.bind(this, this.onInput));
       }
     }
   },
@@ -57,7 +59,7 @@ export default Ember.Mixin.create({
       this.isHeld = false;
       index = this.ripples.length - 1;
       ripple = this.ripples[index];
-      Ember.run.later(this,function(){
+      run.later(this,function(){
         this.updateElement(ripple);
       }, 0);
     }
@@ -75,7 +77,7 @@ export default Ember.Mixin.create({
     if (this.rippleContainer){
       return this.rippleContainer;
     }
-    this.rippleContainer = Ember.$('<div class="md-ripple-container">');
+    this.rippleContainer = $('<div class="md-ripple-container">');
     this.$(this.get('rippleContainerSelector')).append(this.rippleContainer);
     return this.rippleContainer;
   },
@@ -87,7 +89,7 @@ export default Ember.Mixin.create({
   * @returns {angular.element} the generated ripple element
   */
   getRippleElement(css) {
-    var elem = Ember.$('<div class="md-ripple" data-counter="' + this.counter++ + '">');
+    var elem = $('<div class="md-ripple" data-counter="' + this.counter++ + '">');
     this.ripples.unshift(elem);
     this.rippleStates.unshift({ animating: true });
     this.rippleContainer.append(elem);
@@ -184,7 +186,7 @@ export default Ember.Mixin.create({
 
     state.animating = true;
 
-    Ember.run.later(this, function() {
+    run.later(this, function() {
       if (this.get('dimBackground')) {
         container.css({ backgroundColor: color });
       }
@@ -199,7 +201,7 @@ export default Ember.Mixin.create({
         elem.css({ left: '50%', top: '50%' });
       }
       this.updateElement(elem);
-      Ember.run.later(this,function () {
+      run.later(this,function () {
         state.animating = false;
         this.updateElement(elem);
       }, (this.get('outline') ? 450 : 225));
@@ -213,7 +215,7 @@ export default Ember.Mixin.create({
     if (ripples.length === 0 && this.rippleContainer) {
       this.rippleContainer.css({ backgroundColor: '' });
     }
-    Ember.run.later(this,function(){
+    run.later(this,function(){
       elem.remove();
     }, wait);
   },

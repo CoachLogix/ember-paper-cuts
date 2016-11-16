@@ -1,11 +1,13 @@
 import Ember from 'ember';
 import ProxyMixin from './proxy-mixin';
 
-export default Ember.Mixin.create({
+const { Mixin, run } = Ember;
+
+export default Mixin.create({
   init(){
     this._super(...arguments);
-    Ember.run(()=>{
-        Ember.run.scheduleOnce('afterRender', this, 'registerProxy');
+    run(()=>{
+        run.scheduleOnce('afterRender', this, 'registerProxy');
     });
   },
   registerProxy(){

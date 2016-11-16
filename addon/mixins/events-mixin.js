@@ -1,6 +1,7 @@
 import Ember from 'ember';
+const { Mixin, K } = Ember;
 
-export default Ember.Mixin.create({
+export default Mixin.create({
   touchStart(e) {
     return this.down(e);
   },
@@ -19,25 +20,25 @@ export default Ember.Mixin.create({
   mouseLeave(e) {
     return this.up(e);
   },
-  up: Ember.K,
-  down: Ember.K,
-  contextMenu: Ember.K,
+  up: K,
+  down: K,
+  contextMenu: K,
 
   /*
    * Move events
    */
 
-  mouseMove: function(e) {
+  mouseMove(e) {
     return this.move(e);
   },
 
-  touchMove: function(e) {
+  touchMove(e) {
     return this.move(e);
   },
 
-  pointerMove: function(e) {
+  pointerMove(e) {
     return this.move(e);
   },
 
-  move: Ember.K
+  move: K
 });
