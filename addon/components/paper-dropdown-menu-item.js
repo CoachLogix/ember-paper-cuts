@@ -5,7 +5,7 @@ import PaperMenuItem from 'ember-paper/components/paper-menu-item';
 const { computed } = Ember;
 
 export default PaperMenuItem.extend({
-  layout: layout,
+  layout,
   checked: false,
   checkIcon: 'check',
   shortcut: null,

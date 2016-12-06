@@ -1,8 +1,10 @@
 import Ember from 'ember';
 import layout from '../templates/components/paper-row';
 
-export default Ember.Component.extend({
-  layout: layout,
+const { Component } = Ember;
 
-  tagName: "md-data-table-row"
+export default Component.extend({
+  layout,
+
+  tagName: 'md-data-table-row'
 });
